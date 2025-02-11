@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Rock Paper Scissors</title>
+
+  </head>
+
+  <body>
+
+    <script>
+      while(true) {
+
+        // Player makes a choice between Rock, Paper and Scissors.
+        let playerSelection = prompt("Please choose Rock, Paper or Scissors");
+
+        playerSelection = playerSelection.toUpperCase();
+
+        console.log(playerSelection);
+
+        // Generates a random number from 1 to 3.
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+        let computerSelection;
+
+        // Assigns random number to Rock, Paper or Scissors.
+        switch(randomNumber) {
+          case 1:
+            computerSelection = "ROCK";
+            break;
+          case 2:
+            computerSelection = "PAPER";
+            break;
+          case 3:
+            computerSelection = "SCISSORS";
+            break;
+        }
+
+        console.log("Computer Selection: " + computerSelection)
+        console.log(randomNumber)
+
+        // Game decision matrix
+        if (playerSelection == computerSelection) {
+          console.log("Go again");
+        }
+        else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
+          console.log("You win");
+          break;
+        }
+        else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
+          console.log("You lose");
+          break;
+        }
+        else if (playerSelection == "PAPER" && computerSelection == "ROCK") {
+          console.log("You win");
+          break;
+        }
+        else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
+          console.log("You lose");
+          break;
+        }
+        else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
+          console.log("You win");
+          break;
+        }
+        else if (playerSelection == "SCISSORS" && computerSelection == "ROCK") {
+          console.log("You lose");
+          break;
+        }
+        else {
+          console.log("Error: You entered something that wasn't Rock, Paper or Scissors");
+        }
+    }
+    </script>
+  </body>
+</html>
